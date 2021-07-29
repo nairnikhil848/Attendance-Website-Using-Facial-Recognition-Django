@@ -1,4 +1,13 @@
-# Attendance-Website-Using-Facial-Recognition-Django-
+# Attendance-Website-Using-Facial-Recognition-Django
+
+## Technologies Used
+[<img  alt="Django" width="80px" height="30px" height="30px" src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=green" />][DJANGO]
+[<img  alt="JavaScript" width="80px" height="30px" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />][JAVASCRIPT]
+[<img  alt="Python" width="80px" height="30px" src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=darkgreen">][PYTHON]
+[<img  alt="SQL" width="80px" height="30px" src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" />][SQL]
+[<img  alt="html5" width="80px" height="30px" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />][HTML]
+[<img  alt="CSS3" width="80px" height="30px" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />][CSS]
+
 
 ## Video
 ![gif](Video/facial-recog.gif)
@@ -11,8 +20,6 @@ The attendance management system proposes login for both students and faculty. S
 
 ### System Architecture
 ![plot](Video/System_Architecture.png)
-
-
 
 
 
@@ -39,4 +46,9 @@ The attendance management system proposes login for both students and faculty. S
 * Just use the django commands to run the website 
 * ex.python manage.py runserver
 
-
+[JAVASCRIPT]: https://devdocs.io/javascript/
+[DJANGO]: https://docs.djangoproject.com/en/3.1/
+[PYTHON]: https://www.python.org/doc/
+[SQL]: https://dev.mysql.com/doc/
+[HTML]: https://devdocs.io/html/
+[CSS]: https://developer.mozilla.org/en-US/docs/Web/CSS
