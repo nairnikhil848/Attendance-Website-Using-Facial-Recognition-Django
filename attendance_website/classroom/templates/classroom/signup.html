@@ -1,0 +1,93 @@
+{% load static %} {% load widget_tweaks %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}" />
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="user signinBx">
+          <div class="imgBx">
+            <img src="/static/images/student-signup.jpg" />
+          </div>
+          <div class="formBx">
+            <form
+              method="POST"
+              action="{% url 'student_register' %}"
+              novalidate
+            >
+              {% csrf_token %}
+              <h2>Student</h2>
+              {% for field in form %} {% comment %} {{field}} {% endcomment %}
+              {% render_field field placeholder=field.label %} {% for error in
+              field.errors %}
+              <p style="color: red">{{ error }}</p>
+              {% endfor %} {%endfor%}
+              <input type="submit" value="Create an Account" />
+              <p class="signup">
+                Are you a Teacher?<a href="#" onclick="toggleForm();"
+                  >Sign up</a
+                >
+              </p>
+            </form>
+          </div>
+        </div>
+
+        <div class="user signupBx">
+          <div class="formBx">
+            <form method="POST" action="{% url 'teacher_register' %}">
+              {% csrf_token %}
+              <h2>Teacher</h2>
+              {% for field in form %} {% render_field field
+              placeholder=field.label %} {% for error in field.errors %}
+              <p style="color: red">{{ error }}</p>
+              {% endfor %} {%endfor%}
+              <input type="submit" value="Create an Account" />
+              <p class="signup">
+                Don't have an account?<a href="#" onclick="toggleForm();"
+                  >Student</a
+                >
+              </p>
+            </form>
+          </div>
+          <div class="imgBx">
+            <img src="/static/images/teacher-signup.jpg" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      function toggleForm() {
+        section = document.querySelector("section");
+        container = document.querySelector(".container");
+        container.classList.toggle("active");
+        section.classList.toggle("active");
+        changevar();
+      }
+      function changevar() {
+        if (sessionStorage.getItem("a") == "teacher") {
+          sessionStorage.setItem("a", "student");
+        } else {
+          sessionStorage.setItem("a", "teacher");
+        }
+      }
+    </script>
+    <script></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function (event) {
+        if (sessionStorage.getItem("a") == "teacher") {
+          toggleForm();
+          changevar();
+        }
+        console.log(sessionStorage.getItem("a"));
+      });
+    </script>
+    <script src="" async defer></script>
+  </body>
+</html>

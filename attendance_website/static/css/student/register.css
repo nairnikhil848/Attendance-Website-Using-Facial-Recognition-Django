@@ -1,0 +1,111 @@
+html,body {
+    background-color: #313131;
+    background: url("/static/images/student/register.jpg");
+    /* background-size: 100%; */
+    background-repeat: no-repeat;
+    /* background-size: 100% 100%; */
+    background-size: cover;
+    height: 100%;
+    margin:0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .registration-form {
+    padding: 61px 0px;
+  }
+
+  .registration-form form {
+    background-color: rgba(218, 218, 218, 0.6);
+    max-width: 880px;
+    margin: auto;
+    padding: 60px 55px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0px 2px 10px rgba(214, 213, 213, 0.5);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .registration-form .form-icon {
+    text-align: center;
+    background-color: #050505;
+    border-radius: 50%;
+    font-size:  22px;
+    color: white;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    margin-bottom: 50px;
+    line-height: 100px;
+  }
+  .text{
+    font-size: 50px;
+    margin-bottom: 26px;
+    margin-top: -42px;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #162021;
+  }
+  .text span:nth-child(even){
+    border-bottom: 4px solid black;
+
+  }
+  .registration-form .item {
+    width: 56%;
+    border-radius: 10px;
+    margin-bottom: 36px;
+    padding: 10px 20px;
+    background-color: #e7e7e7;
+    color:#162021 ;
+    font-size:20px;
+    border-style:none ;
+  }
+
+  .registration-form .create-account {
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #212226;
+    border: none;
+    color: white;
+    margin-top: 25px;
+    width: 50%;
+    margin-bottom: -42px;
+    font-family: sans-serif;
+    margin-left: 17px;
+  }
+
+  @media (max-width: 576px) {
+    .registration-form form {
+      padding: 50px 20px;
+    }
+
+    .registration-form .form-icon {
+      width: 70px;
+      height: 70px;
+      font-size: 30px;
+      line-height: 70px;
+    }
+  }
+  p{
+    color: #e30c0c; 
+    font-weight: bold; 
+    margin: 0; 
+    padding: 0;
+    font-family:Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-left: 0;
+  }
+  .SignUplink{
+    float:right;
+    padding: 7px 13px;
+    font-size: 25px;
+    color:#212226;
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  }
+  a{
+      margin-left: 20px;
+  }

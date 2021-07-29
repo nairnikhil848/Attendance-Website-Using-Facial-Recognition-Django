@@ -1,0 +1,303 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@500;700&family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <video id="vid" autoplay="autoplay" muted width="100%" height="100%">
+        <source src="{% static 'images/final_video.mp4' %}" type="video/mp4" />
+      </video>
+
+      <img
+        src="{% static 'images/intro_final_image.png' %}"
+        class="banner"
+        id="banner"
+      />
+
+      <a class="logo" id="logo">
+        <img src="{% static 'images/logo.png' %}" />
+      </a>
+      <a href="{% url 'login' %}" class="btn-login">
+              <span>login<span>
+              <div class="dot"></div>
+      </a>
+      <nav role="select">
+        <ul>
+          <li><a class="obss-scroller" href="#home">Home</a></li>
+          <li><a class="obss-scroller" href="#intro">Intro</a></li>
+          <li><a class="obss-scroller" href="#signup">Sign up</a></li>
+          <li><a class="obss-scroller" href="#aboutus">About us</a></li>
+          {% comment %} <li><a class="obss-scroller" href="#contact">Contact</a></li> {% endcomment %}
+          <div class="effect"></div>
+        </ul>
+
+        <select onchange="if (this.value) window.location.href = this.value;">
+          <option value="#home">Home</option>
+          <option value="#intro">Intro</option>
+          <option value="#signup">Sign up</option>
+          <option value="#aboutus">About us</option>
+        </select>
+      </nav>
+      {% comment %} <a href="#" class="btn-login">login</a> {% endcomment %}
+    </header>
+
+    <section class="flex" id="intro">
+      <h2>Tired of giving your attendance in the boring conventional way?</h2>
+      <video controls width="250" id="face-vid">
+        <source
+          src="{% static 'images/presence-introduction.mp4' %}"
+          type="video/mp4"
+        />
+      </video>
+
+      <h1>Fret not!</h1>
+      <p>
+        We have come from far around the world to make your experience much
+        smoother and much enjoyable and keep you robus all the time.
+      </p>
+    </section>
+
+    <section class="signup" id="signup">
+      <div id="student-right">Student</div>
+      <div class="container">
+        <div
+          class="signup_card"
+          data-aos="fade-up-right"
+          data-aos-anchor-placement="top-center"
+        >
+          <div class="content">
+            <div class="imgBx"><img src="/static/images/student/signup-face.jpg" /></div>
+            <div class="contentBx">
+              <h3>Student<br /><span>something to say about</span></h3>
+            </div>
+          </div>
+          <div class="sci">
+            <a href="{% url 'student_register' %}" onclick="setstudent();" class="btn"
+              ><span></span>SIGN UP</a
+            >
+          </div>
+        </div>
+
+        <div
+          class="signup_card"
+          data-aos="fade-up-left"
+          data-aos-anchor-placement="top-center"
+        >
+          <div class="content">
+            <div class="imgBx"><img src="/static/images/teacher/signup-face.jpg" /></div>
+            <div class="contentBx">
+              <h3>Teacher<br /><span>Something to say about</span></h3>
+            </div>
+          </div>
+          <div class="sci">
+            <a href="{% url 'teacher_register' %}" onclick="setteacher();"class="btn"
+              ><span></span>SIGN UP</a
+            >
+          </div>
+        </div>
+      </div>
+      <div id="teacher-left">Teacher</div>
+    </section>
+
+    <section id="aboutus">
+      
+      <div class="white-box">
+        <div class="aboutus" data-aos="fade-down" data-aos-duration="1000"><h2>About Our Website</h2></div> 
+        <div class="one" data-aos="fade-up"data-aos-anchor-placement="center-bottom" data-aos-duration="3000" >
+          <div class="what"><h1>What is Présence?</h1></div>
+          <p>Présence is a French word for being present or to be in attendance.Our website works as an attendance management system which uses facial recognition.</p>
+        </div>
+        <div class="two-boxes" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="3000">
+          <div class="two" >
+            <div class="student"><h1>How it works for Students?</h1></div>
+            <p>Students can select a session created by the teacher and mark their attendance using facial recogniton.</p>
+          </div>
+          <div class="three">
+            <div class="teacher"><h1>How it works for Teachers?</h1></div>
+            <p>Teachers can create sessions for students to mark their attendance and after that download the attendance in an excel sheet.</p>
+          </div>
+        </div>
+        </div>
+    </section>
+
+
+
+    <section id="contact">
+      <footer>
+        <div class="container">
+          <div class="sec contact">
+            <h2>Social Media</h2>
+            <ul class="sci">
+              <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+              <li><a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+          <div class="sec quickLinks">
+            <h2>Info Links</h2>
+            <ul>
+              <li><a  href="{% url 'student_info' %}" >Student-Info</a></li>
+              <li><a href="{% url 'teacher_info' %}">Teacher-Info</a></li>
+            </ul>
+          </div>
+          <div class="sec contactus">
+            <h2>Contact Info</h2>
+            <ul class="info">
+              {% comment %} <li>
+                <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                <span><p>Thane,421201
+                Thakurli,India</p></span>
+              </li> {% endcomment %}
+              <li>
+                <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                <p><a href="#">+917715868705</a></p>
+              </li>
+              <li>
+                <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                <p><a href="mailto:nairnikhil848@gmail.com">nairnikhil848@gmail.com</a></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </section>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
+      integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="{% static 'js/index.js' %}"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+
+            $(window).on('scroll',function(){
+      		var trainPosition = Math.round(($(window).scrollTop()*2) / $(window).height() * 100);
+          console.log($(window).scrollTop());
+          console.log($(window).height());
+          console.log(trainPosition);
+          $('#student-right').css('transform','translateX('+(trainPosition - 89 ) +'%)');
+          $('#teacher-left').css('transform','translateX('+((500-trainPosition + 40) ) +'%)');
+
+      });
+
+
+                  $(window).scroll(function () {
+                    var scroll = $(window).scrollTop();
+                    if (scroll > 0) {
+                      $("header").addClass("scrolled");
+                      $("#vid").addClass("scrolled");
+                      $("#face-vid").addClass("scrolled");
+                      document.getElementById("vid").remove();
+
+                      //document.getElementById("banner").style.opacity = 0;
+                      document.getElementById("logo").style.opacity = 1;
+                      document.getElementById("banner").style.opacity = 1;
+                    } else {
+                      $("header").removeClass("scrolled");
+                      $("#face-vid").removeClass("scrolled");
+
+                      //document.getElementById("banner").style.opacity = 1;
+                      //document.getElementById("face-vid").style.opacity = 0;
+                    }
+                  });
+
+                  {% comment %} var windowHeight = Math.max(
+                      document.documentElement.clientHeight,
+                      window.innerHeight || 0
+                    ),
+                    lastTop;
+
+                  window.addEventListener("scroll", function (event) {
+                    var train = document.getElementById("student-right"),
+                      top = train.getBoundingClientRect().top,
+                      offset = top - windowHeight;
+
+                    if (offset > 0) {
+                      train.classList.remove("choochoo");
+                      return;
+                    }
+
+                    if (top < windowHeight / 2 && top > lastTop) {
+                      train.classList.remove("choochoo");
+                    }
+
+                    if (train.className.indexOf("choocho") === -1 && top < lastTop) {
+                      train.classList.add("choochoo");
+                    }
+
+                    lastTop = top;
+                  }); {% endcomment %}
+                    {% comment %} var current = $(window).scrollTop();
+                var total = $(window).height() - current;
+                var ele = $("#student-right");
+                var currPosition = ele.position().left;
+                var trackLength = 1000;
+            $(window).scroll(function (event) {
+                current = $(window).scrollTop();
+                console.log({total:total,current:current});
+                console.log(current/total * 100);
+                var newPosition = trackLength * (current/total)
+                ele.css({left:currPosition+newPosition+'px'});
+            }); {% endcomment %}
+
+
+            {% comment %} $(document).ready(function(){
+              $("section").height($(window).height());
+              onWindowRezise();
+
+              $(".obss-scroller").smoothScroller({
+                duration:1000,
+                activeClass:"active"
+              });
+            });
+
+            var onWindowRezise = funtion(){
+              $(window).resize(funtion(evt){
+                $("section").height($(window).height());
+              });
+            } {% endcomment %}
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      function setstudent() {
+        var a;
+        sessionStorage.setItem("a", "student");
+        return true;
+      }
+      function setteacher() {
+        var a;
+        sessionStorage.setItem("a", "teacher");
+      }
+    </script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

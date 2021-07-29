@@ -1,0 +1,79 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@500;700&family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <title>student-dashboard</title>
+    <style>
+           html,body {
+           margin:0;
+           justify-content: center;
+
+           align-items: center;
+
+           font-family: 'Heebo';
+           background:#203647;
+           /* filter: blur(8px);
+         -webkit-filter: blur(8px); */
+
+         }
+
+        a{
+         transform: translate(0,10px);
+         font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+       }
+
+       .text{
+         color:#4DA8DA;
+         padding:1%;
+         width:100%
+         font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+         font-size: 50px;
+            text-shadow: 1px 1px black;
+
+         justify-content: center;
+         align-items: center;
+
+       }
+      .btn-success {
+         color: var(--green);
+         background-color: #e3ebe5;
+         border-color: #28a745;
+       }
+       .back{
+           top:0;
+           left:0;
+       }
+    </style>
+  </head>
+  <body>
+    <div class="p-3 mb-12">
+      <a class="btn btn-light btn-lg back" href="{% url 'student_landing' %}"
+        >Back to home</a
+      >
+      <div class="text-center">
+        <div class="text">Uploading Images to database successfully.</div>
+        <div class="text">Click the below button to train the images.</div>
+        <a
+          class="btn btn btn-success btn-lg retry"
+          href="{% url 'train_images' %}"
+          >Train Images</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'css/attendance_list.css' %}" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <a href="{% url 'download_list' %}" class="btn btn-delete btn-danger">
+      Download list and delete session
+    </a>
+
+    <a href=" {% url 'teacher_landing' %}" class="btn btn-home btn-success"
+      ><-back to homepage
+    </a>
+
+    <div class="table-box">
+      <table cellpadding="10">
+        <tr>
+          <th>SrNo</th>
+          <th>Name</th>
+          <th>Rollno</th>
+          <th>AdmissionNo</th>
+          <th>Timestamp</th>
+        </tr>
+        {% for student in attendance_list %}
+        <tr>
+          <th>{{forloop.counter}}</th>
+          <th>{{student.student_name}}</th>
+          <th>{{student.roll_no}}</th>
+          <th>{{student.admission_number}}</th>
+          <th>{{student.timestamp}}</th>
+        </tr>
+        {%endfor%}
+      </table>
+    </div>
+  </body>
+</html>

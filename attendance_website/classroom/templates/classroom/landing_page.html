@@ -1,0 +1,98 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@500;700&family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+    <title>Slide Animation</title>
+  </head>
+  <body>
+    <main>
+      <section class="landing">
+        <nav class="top-navigation">
+          <ul class="nav-links">
+            <li><h1 id="logo">Student</h1></li>
+
+            <li>Welcome-{{user.username}}</li>
+            <li>
+              <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        {% comment %} #--------------------------------------------------------
+        {% endcomment %}
+        <nav class="middle-navigation">
+          <ul>
+            <li>Your Profile</li>
+            <li>Upload DataSet</li>
+
+            <a href="#">
+              <span class="front">Logout</span>
+              <span class="middle"></span>
+              <span class="back">Sure?</span>
+            </a>
+          </ul>
+        </nav>
+
+        <div class="big-text">
+          <h1>DIVISIONFORME</h1>
+          <p>
+            The migrate command takes all the migrations that haven’t been
+            applied (Django tracks which ones are applied using a special table
+            in your database called django_migrations)
+          </p>
+        </div>
+
+        {% comment %} #------------------------------ {% endcomment %}
+      </section>
+    </main>
+    <div class="intro">
+      <div class="intro-text">
+        <h1 class="hide">
+          <span class="text">Signed in </span>
+        </h1>
+        <h1 class="hide">
+          <span class="text">as {{user.username}}/</span>
+        </h1>
+        <h1 class="hide">
+          <span class="text">Student</span>
+        </h1>
+      </div>
+    </div>
+    <div class="slider"></div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
+      integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="{% static 'js/homepage.js' %}"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.min.js"
+      integrity="sha512-6ORWJX/LrnSjBzwefdNUyLCMTIsGoNP6NftMy2UAm1JBm6PRZCO1d7OHBStWpVFZLO+RerTvqX/Z9mBFfCJZ4A=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(".close").click(function () {
+        $(".outside").toggleClass("in");
+        $(".bar").toggleClass("active");
+        $(this).toggleClass("is-showing");
+      });
+    </script>
+    <script>
+      $(".hamburger").click(function () {
+        $(".middle-navigation").toggleClass("active");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@500;700&family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <title>student-dashboard</title>
+    <style>
+              html,body {
+
+              {% comment %} background:
+              linear-gradient(
+                var(--gray-dark), #02090f
+              ),
+              url("/static/images/student/successfull.jpg"); {% endcomment %}
+
+              {% comment %} background-repeat: no-repeat;
+              /* background-size: 100% 100%; */
+              background-size: cover;
+              height: 100%; {% endcomment %}
+              margin:0;
+              justify-content: center;
+
+              align-items: center;
+
+              font-family: 'Heebo';
+              background:#203647;
+              /* filter: blur(8px);
+            -webkit-filter: blur(8px); */
+
+            }
+
+           a{
+            transform: translate(0,10px);
+            font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+          }
+
+          .text{
+            padding:1%;
+            width:100%
+            font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+            font-size: 55px;
+      margin-top: 80px;
+            margin-left50px;
+            justify-content: center;
+            align-items: center;
+        color:#4DA8DA;;
+             text-shadow: 1px 1px black;
+
+
+          }
+
+          .back{
+              top:0;
+              left:0;
+          }
+    </style>
+  </head>
+  <body>
+    <div class="p-3 mb-12">
+      <div class="text-center">
+        <div class="text">Image Trained Successfull</div>
+        <div class="text"></div>
+        <a
+          class="btn btn btn-success btn-lg retry"
+          href="{% url 'student_landing' %}"
+          >Back to home</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

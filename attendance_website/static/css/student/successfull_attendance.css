@@ -1,0 +1,51 @@
+html,body {
+
+    background:
+    linear-gradient(
+      var(--gray-dark), #02090f
+    ), 
+    url("/static/images/student/successfull.jpg");
+    /* background-size: 100%; */
+    background-repeat: no-repeat;
+    /* background-size: 100% 100%; */
+    background-size: cover;
+    height: 100%;
+    margin:0;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    background-color: rgba(200,100,0,.5); 
+    background-blend-mode: multiply;
+    /* filter: blur(8px);
+  -webkit-filter: blur(8px);
+  z-index:-2; */
+    /* background: linear-gradient(rgba(249, 119, 76,.15), rgba(128, 42, 12,.15)); */
+  }
+
+a{
+  transform: translate(0,170px);
+  font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+}
+
+.text{
+  display:flex;
+  max-width:632px;
+  height:100px;
+  font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+  font-size: 70px;
+  margin-top: 200px;
+  margin-left:30%;
+  justify-content: center;
+  align-items: center;
+  color:var(--light);
+  /* background-color: rgb(0,0,0); /* Fallback color */
+  /* background-color: rgba(0,0,0, 0.4); */
+  
+  z-index:100;
+  
+}
+.btn-success {
+  color: var(--green);
+  background-color: #e3ebe5;
+  border-color: #28a745;
+}

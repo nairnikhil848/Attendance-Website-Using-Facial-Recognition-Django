@@ -1,0 +1,84 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@500;700&family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <title>student-dashboard</title>
+    <style>
+          html,body {
+          margin:0;
+          justify-content: center;
+
+          align-items: center;
+
+          font-family: 'Heebo';
+          background-color: rgba(200,100,0,.5);
+          background:#011f30;
+          /* filter: blur(8px);
+        -webkit-filter: blur(8px); */
+
+        }
+
+
+      .text{
+        font-family: Arial;
+        font-size: 50px;
+        margin-top:140px;
+        color:white;
+        text-shadow: 1px 1px black;
+
+      }
+      .btn-success {
+        margin-top:3%;
+        color: var(--green);
+        background-color: #e3ebe5;
+        border-color: #28a745;
+      } 
+      .back{
+          top:0;
+          left:0;
+      }
+      .error{
+          position: absolute;
+  right: 150px;
+  bottom:320px;
+       
+      }
+    </style>
+  </head>
+  <body>
+    <div class="p-3 mb-12">
+      <a class="btn btn-light btn-lg back" href="{% url 'student_landing' %}"
+        >Back to home</a
+      >
+      <div class="error">
+
+    <image src="{% static 'images/error.png' %}" width="150" height="150">
+      </div>
+      <div class="text-center">
+        <div class="text"><p>Recognition of Your Image failed.<br>
+        Please Try Again to mark your attendance.</p>
+        </div>
+        <a
+          class="btn btn btn-success btn-lg retry"
+          href="{% url 'FaceImageTest' %}"
+          >Mark Attendance</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

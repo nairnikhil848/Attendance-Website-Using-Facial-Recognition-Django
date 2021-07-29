@@ -1,0 +1,133 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}" />
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="user signinBx">
+          <div class="imgBx">
+            <img src="/static/images/student/signup.jpg" />
+          </div>
+          <div class="formBx">
+
+            <form
+              method="POST"
+              action="{% url 'student_register' %}"
+              novalidate
+            >
+              
+              {% csrf_token %}
+              <h2>Student</h2>
+              {% for field in form %}
+                {%if field.label == "Div"%}
+                  <div class="div">{{field.label}}
+                  {% render_field field placeholder=field.label %}</div>
+                {%else%}
+              {% render_field field placeholder=field.label %}
+              {% endif %}
+              {% for error in field.errors %}
+                  <p style="color: red">{{ error }}</p>
+                {% endfor %}
+              {%endfor%}
+              
+              {% comment %}{% for field in form %} 
+              {{field.name}}
+              {% comment %} <input type="text" placeholder="User" /> {% endcomment %}
+              {% comment %} {% render_field field class="" type="text" placeholder="{{field.name}}"%} {% endcomment %}
+               {% comment %} {% render_field field style="border: 2px dashed red;" placeholder=field.name %} {% endcomment %}
+              {% comment %} <input type="text" placeholder="{{form.name}}" > </input> {% endcomment %}
+              {% comment %} {% endfor %} {% endcomment %}
+              <input type="submit" value="Create an Account" />
+              <p class="signup">
+                Already have an Account?<a href="{% url 'login' %}"
+                  >Log in</a
+                >
+              </p>
+            </form>
+          </div>
+        </div>
+
+        {% comment %} <div class="user signupBx">
+          <div class="formBx">
+            <form method="POST" action="{% url 'teacher_register' %}">
+              {% csrf_token %}
+              <h2>Teacher</h2>
+               {% for field in form %}
+            
+              {% render_field field placeholder=field.label %}
+              {% for error in field.errors %}
+                  <p style="color: red">{{ error }}</p>
+                {% endfor %}
+              {%endfor%}         
+              <input type="submit" value="Create an Account" />
+              <p class="signup">
+                Don't have an account?<a href="#" onclick="toggleForm();"
+                  >Student</a>
+              </p>
+            </form>
+          </div>
+          <div class="imgBx">
+            <img src="/static/images/teacher-signup.jpg" />
+          </div>
+        </div> {% endcomment %}
+      </div>
+    </section>
+    <script>
+      function toggleForm() {
+        section = document.querySelector("section");
+        container = document.querySelector(".container");
+        container.classList.toggle("active");
+        section.classList.toggle("active");
+        changevar();
+      }
+      function changevar() {
+        if (sessionStorage.getItem("a") == "teacher") {
+          sessionStorage.setItem("a", "student");
+        } else {
+          sessionStorage.setItem("a", "teacher");
+        }
+      }
+    </script>
+    <script></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function (event) {
+        /*if (sessionStorage.getItem("a") == null || sessionStorage.getItem("a") == "undefined") {
+              console.log("A NULL value");
+              var a;
+              {% ifequal user_type "teacher" %}
+                sessionStorage.setItem("a", "teacher");
+                toggleForm();
+              {%else%}
+                sessionStorage.setItem("a", "student");
+              {% endifequal %}
+              console.log(sessionStorage.getItem("a"));
+        }
+        else{
+           console.log(sessionStorage.getItem("a"));
+              console.log("Value of A notnull"); */
+        if (sessionStorage.getItem("a") == "teacher") {
+          toggleForm();
+          changevar();
+        }
+        console.log(sessionStorage.getItem("a"));
+      });
+    </script>
+    {% comment %} {% ifequal user_type "teacher" %}
+    <script>
+      toggleForm();
+      changevar();
+      console.log("{{user_type}}");
+    </script>
+    {% endifequal %} {% endcomment %}
+    <script src="" async defer></script>
+  </body>
+</html>

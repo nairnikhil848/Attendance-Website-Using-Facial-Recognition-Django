@@ -1,0 +1,117 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/student/landingPage.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@500;700&family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <title>Student-dashboard</title>
+  </head>
+  <body>
+    <main>
+      <section class="landing">
+        <nav class="top-navigation">
+          <ul class="nav-links">
+            <li><h1 id="logo">Student</h1></li>
+
+            <li>Welcome-{{user.username}}</li>
+            <li>
+              <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <nav class="middle-navigation">
+          <ul>
+            <li><a href="{% url 'student_landing' %}">Your Profile</a></li>
+            <li><a href="{% url 'upload_images_home' %}">Upload DataSet</a></li>
+            <li><a href="{% url 'student_info' %}">Help/Info</a></li>
+
+            <a class="logout" href="{% url 'logout' %}">
+              <span class="front">Logout</span>
+              <span class="middle"></span>
+              <span class="back">Sure?</span>
+            </a>
+          </ul>
+        </nav>
+
+        <div class="big-text">
+          {% if attendance_session %} {% if marked %}
+          <div class="already-text text-center">
+            You have already marked the attendance
+          </div>
+          {% else %}
+          <div class="already-text text-center text-uppercase">
+            Subject: {{attendance_session.subject}}
+          </div>
+          <div class="another-text text-center text-uppercase">
+            Teacher: {{attendance_session.teacher_name.user.username}}
+          </div>
+          <a class="btn btn-danger buttonmark" href="{% url 'FaceImageTest' %}"
+            >MARK ATTENDANCE</a
+          >
+          {% endif %} {% else %}
+          <div class="already-text text-center">
+            No attendance session available right now
+          </div>
+          {%endif%}
+        </div>
+      </section>
+    </main>
+    {% comment %}
+    <div class="intro">
+      <div class="intro-text">
+        <h1 class="hide">
+          <span class="text" style="font-size: 100px">Signed in</span>
+        </h1>
+        <h1 class="hide">
+          <span class="text" style="font-size: 100px"
+            >as {{user.username}}</span
+          >
+        </h1>
+        <h1 class="hide">
+          <span class="text" style="font-size: 100px">-Student</span>
+        </h1>
+      </div>
+    </div>
+    {% endcomment %} {% comment %}
+    <div class="slider"></div>
+    {% endcomment %}
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
+      integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="{% static 'js/homepage.js' %}"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.min.js"
+      integrity="sha512-6ORWJX/LrnSjBzwefdNUyLCMTIsGoNP6NftMy2UAm1JBm6PRZCO1d7OHBStWpVFZLO+RerTvqX/Z9mBFfCJZ4A=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+      $(".hamburger").click(function () {
+        $(".middle-navigation").toggleClass("active");
+      });
+    </script>
+  </body>
+</html>
